@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+<body>
+    <button id="btn">0</button>
+    <br>
+    <input id="input" type="text">
+
+    <script>
+        // const BTN = document.querySelector("#btn");
+        // let count = 0;
+        // BTN.addEventListener("click", event =>{
+        //     BTN.textContent = ++ count;
+        //     history.pushState(count, null, "/push/" + count);
+        // })
+        // window.addEventListener("popstate", event => {
+        //     if(event.state){
+        //         BTN.textContent = event.state;
+        //         return;
+        //     }
+        //     BTN.textContent = 0;
+        // })
+
+        const TEXT = document.querySelector("#input");
+        let myText = "";
+        TEXT.addEventListener("input", event => {
+            myText = TEXT.value;
+            history.pushState(myText, null, "/push/" + myText);
+        })
+        window.addEventListener("popstate", event => {
+            if(event.state){
+                TEXT.value = event.state;
+            }
+        })
+    </script>
+</body>
+</html>
