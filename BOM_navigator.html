@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+</head>
+<body>
+    <script>
+        console.log(navigator.language);
+        console.log(navigator.userAgent);
+
+        let agent = navigator.userAgent.toLowerCase();
+        let chromeBrowser = (agent.indexOf("chrome") > -1) && (agent.indexOf("edg") === -1);
+
+        if(chromeBrowser){
+            console.log(`You're using Chrome browser!`);
+        }
+
+        if(agent.indexOf("edg") > -1){
+            console.log(`You're using Edge browser!`);
+        }
+    </script>
+</body>
+</html>
