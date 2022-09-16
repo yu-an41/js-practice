@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>location</title>
 </head>
+
 <body>
     <a href="#abc">跳到b部分</a>
     <hr>
-    <select name="page" id="">
+    <select name="page" id="page">
         <option value="Index.html">請選擇頁面</option>
         <option value="BOM_screen.html">screen</option>
         <option value="BOM_navigator.html">navigator</option>
@@ -39,19 +41,20 @@
     <p>bbb</p>
 
     <script>
-        console.log(location);
-        console.log(location.protocol);
-        console.log(location.host);
-        console.log(location.pathname);
-        console.log(location.search);
-        console.log(location.hash);
+        // console.log(location);
+        // console.log(location.protocol);
+        // console.log(location.host);
+        // console.log(location.pathname);
+        // console.log(location.search);
+        // console.log(location.hash);
 
-        const sel = document.querySelector("#page");
-        sel.addEventListener("change", event=> {
-            // console.log(sel.options[sel.selectedIndex].value);
-            // location.href = sel.options[sel.selectedIndex].value;
-            location.replace(sel.options[sel.selectedIndex].value);
+        const SEL = document.querySelector("#page");
+        SEL.addEventListener("change", event => {
+            // console.log(SEL.options[SEL.selectedIndex].value);
+            // location.href = SEL.options[SEL.selectedIndex].value;
+            location.replace(SEL.options[SEL.selectedIndex].value);
         })
     </script>
 </body>
+
 </html>
