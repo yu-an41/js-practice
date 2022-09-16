@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Start" id="btn"></input>
+    <div id="div1">00 : 00 : 00</div>
+
+    <script>
+        const BTN = document.querySelector("#btn");
+        let myTime = document.querySelector("#div1");
+        let time = null;
+        
+        BTN.addEventListener("click", () => {
+            if (BTN.value === "Start") {
+                BTN.value = "Stop";
+                time = window.setInterval(clock, 1000);
+            } else {
+                BTN.value = "Start";
+                window.clearInterval(time);
+            }
+        })
+        function clock() {
+            let today = new Date();
+            let hour = today.getHours();
+            let min = today.getMinutes();
+            let sec = today.getSeconds();
+            myTime.innerHTML = `${hour} : ${min} : ${sec}`;
+        }
+    </script>
+</body>
+
+</html>
